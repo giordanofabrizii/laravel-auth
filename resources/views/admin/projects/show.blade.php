@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('custom-js')
+    @vite('resources/js/delete.js')
+@endsection
+
 @section('content')
 
     <div class="container">
@@ -10,7 +14,7 @@
                 <a class="btn btn-warning" href="{{route('admin.projects.edit',compact('project'))}}">
                     Edit
                 </a>
-                <form class="d-inline" action="{{route('admin.projects.destroy',$project)}}" method="POST">
+                <form id="delete-form" class="d-inline" action="{{route('admin.projects.destroy',$project)}}" method="POST" project_title="{{$project->title}}">
                     @method('DELETE')
                     @csrf
 
