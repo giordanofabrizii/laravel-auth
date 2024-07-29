@@ -14,6 +14,8 @@
                         </div>
                     @endif
 
+                    {{-- <a href="/admin/projects">Go to projects</a> --}}
+
                     {{ __('You are logged in!') }}
                 </div>
             </div>
